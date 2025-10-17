@@ -1,0 +1,20 @@
+name: Simple CI for Tic Tac Toe
+
+on:
+  push:
+    branches: [ main, feature-update ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show project files
+        run: ls -l
+
+      - name: Print Hello CI
+        run: echo "Hello CI! Your Tic Tac Toe project was checked out successfully."
